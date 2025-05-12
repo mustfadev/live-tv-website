@@ -23,17 +23,7 @@ local function safeWait(time)
     end
 end
 
-local function checkAndJoinGame()
-    if game.PlaceId ~= TARGET_GAME_ID then
-        print("Not in the correct game! Teleporting...")
-        pcall(function()
-            TeleportService:Teleport(TARGET_GAME_ID, LocalPlayer)
-        end)
-        safeWait(5)
-        return false
-    end
-    return true
-end
+
 
 if not checkAndJoinGame() then return end
 
